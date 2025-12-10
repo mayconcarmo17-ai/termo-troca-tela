@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termo de Responsabilidade – Troca de Tela</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    padding: 20px;
+}
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+}
+h1 {
+    text-align: center;
+    font-size: 20px;
+}
+label {
+    margin-top: 12px;
+    display: block;
+    font-weight: bold;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #198754;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.termo {
+    font-size: 14px;
+    line-height: 1.5;
+}
+#confirmacao {
+    margin-top: 15px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>TERMO DE CIÊNCIA E RESPONSABILIDADE – TROCA DE TELA</h1>
+
+<div class="termo">
+<p>Declaro que autorizo a execução do serviço de <strong>troca de tela</strong> no aparelho abaixo identificado.</p>
+
+<p>Estou ciente de que <strong>não há garantia em casos de mau uso</strong>, incluindo quedas, impactos, trincas, rachaduras, marcas de pressão, contato com líquidos, umidade, oxidação e intervenção de terceiros não autorizados.</p>
+
+<p>Tenho ciência de que eventuais danos internos preexistentes ou ocultos poderão se manifestar após o serviço, não sendo de responsabilidade da empresa.</p>
+</div>
+
+<label>Nome Completo</label>
+<input type="text" id="nome">
+
+<label>CPF</label>
+<input type="text" id="cpf">
+
+<label>Aparelho / Modelo</label>
+<input type="text" id="aparelho">
+
+<label>Assinatura Digital (digite seu nome)</label>
+<input type="text" id="assinatura">
+
+<button onclick="assinar()">ASSINAR TERMO</button>
+
+<p id="confirmacao"></p>
+</div>
+
+<script>
+function assinar() {
+    if (!nome.value || !assinatura.value) {
+        alert("Preencha nome e assinatura.");
+        return;
+    }
+    const data = new Date().toLocaleString("pt-BR");
+    confirmacao.innerHTML =
+        "✅ Termo aceito por <b>" + nome.value +
+        "</b><br>📅 Data e hora: " + data;
+}
+</script>
+
+</body>
+</html>
